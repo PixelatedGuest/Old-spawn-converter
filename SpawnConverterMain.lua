@@ -6,10 +6,10 @@ function replaceSpawnDecal(spawnDecal)
 	end
 end
 
-for i,v in pairs(game.Workspace:GetDescendants()) do
+for _, obj in pairs(workspace:GetDescendants()) do
 	replaceSpawnDecal(v)
 end
 
-game.Workspace.DescendantAdded:Connect(function(SpawnLocation)
-	replaceSpawnDecal(SpawnLocation)
+workspace.DescendantAdded:Connect(function(obj)
+	replaceSpawnDecal(obj)
 end)
